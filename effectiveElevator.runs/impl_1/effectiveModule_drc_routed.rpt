@@ -1,0 +1,141 @@
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
+| Date         : Mon Dec 24 09:11:22 2018
+| Host         : DESKTOP-148T5M7 running 64-bit major release  (build 9200)
+| Command      : report_drc -file effectiveModule_drc_routed.rpt -pb effectiveModule_drc_routed.pb -rpx effectiveModule_drc_routed.rpx
+| Design       : effectiveModule
+| Device       : xc7a35tcpg236-1
+| Speed File   : -1
+| Design State : Routed
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Report DRC
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: design_1
+      Design limits: <entire design considered>
+           Ruledeck: default
+             Max violations: <unlimited>
+             Violations found: 14
++-------------+----------+-------------------------------------------------------------+------------+
+| Rule        | Severity | Description                                                 | Violations |
++-------------+----------+-------------------------------------------------------------+------------+
+| CFGBVS-1    | Warning  | Missing CFGBVS and CONFIG_VOLTAGE Design Properties         | 1          |
+| PDRC-153    | Warning  | Gated clock check                                           | 8          |
+| PLHOLDVIO-2 | Warning  | Non-Optimal connections which could lead to hold violations | 5          |
++-------------+----------+-------------------------------------------------------------+------------+
+
+2. REPORT DETAILS
+-----------------
+CFGBVS-1#1 Warning
+Missing CFGBVS and CONFIG_VOLTAGE Design Properties  
+Neither the CFGBVS nor CONFIG_VOLTAGE voltage property is set in the current_design.  Configuration bank voltage select (CFGBVS) must be set to VCCO or GND, and CONFIG_VOLTAGE must be set to the correct configuration voltage, in order to determine the I/O voltage support for the pins in bank 0.  It is suggested to specify these either using the 'Edit Device Properties' function in the GUI or directly in the XDC file using the following syntax:
+
+ set_property CFGBVS value1 [current_design]
+ #where value1 is either VCCO or GND
+
+ set_property CONFIG_VOLTAGE value2 [current_design]
+ #where value2 is the voltage provided to configuration bank 0
+
+Refer to the device configuration user guide for more information.
+Related violations: <none>
+
+PDRC-153#1 Warning
+Gated clock check  
+Net elevator/bigLogic/elOut/E[0] is a gated clock net sourced by a combinational pin elevator/bigLogic/elOut/elValueToAdd_reg[2]_i_2/O, cell elevator/bigLogic/elOut/elValueToAdd_reg[2]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#2 Warning
+Gated clock check  
+Net elevator/bigLogic/f3Out/E[0] is a gated clock net sourced by a combinational pin elevator/bigLogic/f3Out/nextState_reg[3]_i_2/O, cell elevator/bigLogic/f3Out/nextState_reg[3]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#3 Warning
+Gated clock check  
+Net elevator/movementDirection/clk_out is a gated clock net sourced by a combinational pin elevator/movementDirection/cur[3]_i_2/O, cell elevator/movementDirection/cur[3]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#4 Warning
+Gated clock check  
+Net elevator/myClock/CLK is a gated clock net sourced by a combinational pin elevator/myClock/thirdD[3]_i_2/O, cell elevator/myClock/thirdD[3]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#5 Warning
+Gated clock check  
+Net elevator/myClock/clk_for_fsm is a gated clock net sourced by a combinational pin elevator/myClock/S0_i_1__0/O, cell elevator/myClock/S0_i_1__0. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#6 Warning
+Gated clock check  
+Net elevator/myClock/firstD_reg[3] is a gated clock net sourced by a combinational pin elevator/myClock/firstD[3]_i_2/O, cell elevator/myClock/firstD[3]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#7 Warning
+Gated clock check  
+Net elevator/myClock/secondD_reg[3] is a gated clock net sourced by a combinational pin elevator/myClock/secondD[3]_i_2/O, cell elevator/myClock/secondD[3]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#8 Warning
+Gated clock check  
+Net elevator/myConverter/nextState_reg[2]_i_2__0_n_0 is a gated clock net sourced by a combinational pin elevator/myConverter/nextState_reg[2]_i_2__0/O, cell elevator/myConverter/nextState_reg[2]_i_2__0. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PLHOLDVIO-2#1 Warning
+Non-Optimal connections which could lead to hold violations  
+A LUT elevator/movementDirection/cur[3]_i_2 is driving clock pin of 4 cells. This could lead to large hold time violations. First few involved cells are:
+    elevator/movementDirection/cur_reg[0] {FDRE}
+    elevator/movementDirection/cur_reg[1] {FDRE}
+    elevator/movementDirection/cur_reg[2] {FDRE}
+    elevator/movementDirection/cur_reg[3] {FDRE}
+
+Related violations: <none>
+
+PLHOLDVIO-2#2 Warning
+Non-Optimal connections which could lead to hold violations  
+A LUT elevator/myClock/S0_i_1__0 is driving clock pin of 4 cells. This could lead to large hold time violations. First few involved cells are:
+    elevator/S0_reg {FDCE}
+    elevator/S1_reg {FDCE}
+    elevator/S2_reg {FDCE}
+    elevator/S3_reg {FDCE}
+
+Related violations: <none>
+
+PLHOLDVIO-2#3 Warning
+Non-Optimal connections which could lead to hold violations  
+A LUT elevator/myClock/firstD[3]_i_2 is driving clock pin of 4 cells. This could lead to large hold time violations. First few involved cells are:
+    elevator/secondDiplay/firstD_reg[0] {FDCE}
+    elevator/secondDiplay/firstD_reg[1] {FDCE}
+    elevator/secondDiplay/firstD_reg[2] {FDCE}
+    elevator/secondDiplay/firstD_reg[3] {FDCE}
+
+Related violations: <none>
+
+PLHOLDVIO-2#4 Warning
+Non-Optimal connections which could lead to hold violations  
+A LUT elevator/myClock/secondD[3]_i_2 is driving clock pin of 4 cells. This could lead to large hold time violations. First few involved cells are:
+    elevator/secondDiplay/secondD_reg[0] {FDCE}
+    elevator/secondDiplay/secondD_reg[1] {FDCE}
+    elevator/secondDiplay/secondD_reg[2] {FDCE}
+    elevator/secondDiplay/secondD_reg[3] {FDCE}
+
+Related violations: <none>
+
+PLHOLDVIO-2#5 Warning
+Non-Optimal connections which could lead to hold violations  
+A LUT elevator/myClock/thirdD[3]_i_2 is driving clock pin of 4 cells. This could lead to large hold time violations. First few involved cells are:
+    elevator/secondDiplay/thirdD_reg[0] {FDCE}
+    elevator/secondDiplay/thirdD_reg[1] {FDCE}
+    elevator/secondDiplay/thirdD_reg[2] {FDCE}
+    elevator/secondDiplay/thirdD_reg[3] {FDCE}
+
+Related violations: <none>
+
+
