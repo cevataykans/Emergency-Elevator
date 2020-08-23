@@ -7,7 +7,7 @@
 ## Detailed Information
 
 **HSML Diagram**
-![HSML](HSML_Diagram.jpg)
+![HSML](https://github.com/cevataykans/emergency-elevator/blob/master/HSML_Diagram.png)
 
 
 **Logic Behind FSM**
@@ -46,9 +46,9 @@ In order to make a time efficient elevator, first, I have decided beginning from
 
 **State Encoding:**
 
-     State | Value
-------------- | -------------
-S0               | “0000”
+| State | Value |
+| :---: | :---: |
+S0 | “0000”
 S1 | “0001”
 S2 | “0010”
 S3 | “0011”
